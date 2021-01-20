@@ -1,5 +1,5 @@
 {
-  "name": "ngx-simple-scroll",
+  "name": "@releasium/ngx-simple-scroll",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
