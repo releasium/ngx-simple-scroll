@@ -1,6 +1,6 @@
 import { Directive, Input, HostListener, OnInit, OnChanges } from '@angular/core';
 
-import { ScrollToService } from './scroll-to.service';
+import { NgxSimpleScrollService } from './scroll-to.service';
 import { IScrollToConfig } from './scroll-to-config.interface';
 
 @Directive({
@@ -24,7 +24,7 @@ export class NgxSimpleScrollDirective implements OnInit, OnChanges {
 
   private config: IScrollToConfig;
 
-  constructor(private scrollToService: ScrollToService) {
+  constructor(private scrollToService: NgxSimpleScrollService) {
   }
 
   ngOnInit() {
