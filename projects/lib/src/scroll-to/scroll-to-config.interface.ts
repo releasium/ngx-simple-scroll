@@ -1,4 +1,4 @@
-export interface IScrollToConfig {
+export interface INgxSimpleScrollConfig {
   targetSelector: string;
   scrollToFocus?: boolean;
   scrollToParent?: boolean;

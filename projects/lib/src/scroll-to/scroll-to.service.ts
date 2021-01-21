@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Subject } from 'rxjs';
-import { IScrollToConfig } from './scroll-to-config.interface';
+import { INgxSimpleScrollConfig } from './scroll-to-config.interface';
 
 @Injectable()
 export class NgxSimpleScrollService {
@@ -15,7 +15,7 @@ export class NgxSimpleScrollService {
   private scrollParams: ScrollIntoViewOptions = { block: 'center', behavior: 'smooth' };
   private animationInterval = 50;
 
-  scrollTo(config: IScrollToConfig) {
+  scrollTo(config: INgxSimpleScrollConfig) {
     const mergedConfig = {
       ...this.config,
       ...config,
@@ -36,7 +36,7 @@ export class NgxSimpleScrollService {
     this.scroll(target, mergedConfig);
   }
 
-  private focus(target: HTMLElement, config: IScrollToConfig) {
+  private focus(target: HTMLElement, config: INgxSimpleScrollConfig) {
     const isInput = target instanceof HTMLInputElement;
     const isTextarea = target instanceof HTMLTextAreaElement;
 
@@ -64,7 +64,7 @@ export class NgxSimpleScrollService {
     inputElement.focus(this.focusParams);
   }
 
-  private scroll(target: HTMLElement, config: IScrollToConfig) {
+  private scroll(target: HTMLElement, config: INgxSimpleScrollConfig) {
     const el = config.scrollToParent
       ? this.getParent(target, config.parentSelector) || target
       : target;

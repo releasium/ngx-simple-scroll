@@ -1,7 +1,7 @@
 import { Directive, Input, HostListener, OnInit, OnChanges } from '@angular/core';
 
 import { NgxSimpleScrollService } from './scroll-to.service';
-import { IScrollToConfig } from './scroll-to-config.interface';
+import { INgxSimpleScrollConfig } from './scroll-to-config.interface';
 
 @Directive({
   selector: '[ngxSimpleScroll]',
@@ -11,8 +11,8 @@ export class NgxSimpleScrollDirective implements OnInit, OnChanges {
   @HostListener('click')
   onClick() {
     this.async
-      ? setTimeout(() => this.scrollToService.scrollTo(this.config), 0)
-      : this.scrollToService.scrollTo(this.config);
+      ? setTimeout(() => this.ngxSimpleScrollService.scrollTo(this.config), 0)
+      : this.ngxSimpleScrollService.scrollTo(this.config);
   }
 
   @Input() targetSelector: string;
@@ -22,10 +22,9 @@ export class NgxSimpleScrollDirective implements OnInit, OnChanges {
   @Input() parentSelector: string;
   @Input() scrollToAnimatedObject: boolean;
 
-  private config: IScrollToConfig;
+  private config: INgxSimpleScrollConfig;
 
-  constructor(private scrollToService: NgxSimpleScrollService) {
-  }
+  constructor(private ngxSimpleScrollService: NgxSimpleScrollService) {}
 
   ngOnInit() {
     this.setConfig();
