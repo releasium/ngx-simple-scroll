@@ -1,4 +1,4 @@
-# ngx-simple-scroll 1.0.0
+# ngx-simple-scroll
 Angular library that make ability scroll to particular element using service or directive.
 
 # Example of using NgxSimpleScrollService
